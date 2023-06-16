@@ -19,6 +19,7 @@ public class Main {
         for (Employee e : employees) {
             System.out.println(e);
             sumSalary = e.getSalary() + sumSalary;
+
             if (minSalary > e.getSalary()) {
                 minSalary = e.getSalary();
                 minSalarySurname = e.getSurname();
