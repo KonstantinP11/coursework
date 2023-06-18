@@ -92,7 +92,6 @@ public class Storage {
     }
 
     public Employee printEmploeesDepartment() {
-        System.out.println("Список сотрудников по отделам");
         for (int i = 1; i <= 5; i++) {
             System.out.println("Список сотрудников отдела " + i);
             for (Employee employee : employees) {
