@@ -72,6 +72,7 @@ public class Storage {
             }
         return Employee;
     }
+
     public Employee findRichEmployeeDepartment(int department) {
         Employee Employee = findPoorEmployee();
         for (Employee employee : employees)
@@ -81,5 +82,25 @@ public class Storage {
         return Employee;
     }
 
-}
+    public void printEmployeesSalaryLess(double salary) {
+        System.out.println("сотрудники с зарплатой меньше " + salary);
+        for (Employee employee : employees) {
+            if (employee.getSalary() < salary) {
+                System.out.println(employee.toStringNoDepartment());
+            }
+        }
+    }
 
+    public Employee printEmploeesDepartment() {
+        System.out.println("Список сотрудников по отделам");
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Список сотрудников отдела " + i);
+            for (Employee employee : employees) {
+                if (employee.getDepartment() == i) {
+                    System.out.println(employee.getFullName());
+                }
+            }
+        }
+        return null;
+    }
+}

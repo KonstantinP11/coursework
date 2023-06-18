@@ -62,9 +62,8 @@ public class Employee {
         return "ФИО " + surname + " " + firstName + " " + patronymic;
     }
 
-    public int selectDepartment(int department) {
-        return getDepartment();
+    public String toStringNoDepartment() {
+        return id + " " + surname + " " + firstName + " " + patronymic + " " + salary;
     }
-
 
 }

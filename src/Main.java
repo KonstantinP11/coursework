@@ -12,6 +12,9 @@ public class Main {
         int department = 2;
         System.out.println("Сотрудник с самой низкой зарплатой в отделе " + department + " = " + storage.findPoorEmployeeDepartment(department));
         System.out.println("Сотрудник с самой высокой зарплатой в отделе " + department + " = " + storage.findRichEmployeeDepartment(department));
+        double salaryLess = 20000;
+        storage.printEmployeesSalaryLess(salaryLess);
+        storage.printEmploeesDepartment();
     }
 }
 
