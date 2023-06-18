@@ -3,18 +3,17 @@ public class Employee {
     private String patronymic;
     private String surname;
     private int department;
-    private float salary;
+    private int salary;
     private int id;
     public static int counter = 0;
 
-    public Employee(String firstName, String patronymic, String surname, int department, float salary) {
+    public Employee(String firstName, String patronymic, String surname, int department, int salary) {
         this.firstName = firstName;
         this.patronymic = patronymic;
         this.surname = surname;
         this.department = department;
         this.salary = salary;
-        this.id = counter;
-        counter++;
+        this.id = counter++;
     }
 
     public String getFirstName() {
@@ -37,11 +36,11 @@ public class Employee {
         this.department = department;
     }
 
-    public float getSalary() {
+    public int getSalary() {
         return salary;
     }
 
-    public void setSalary(float salary) {
+    public void setSalary(int salary) {
         this.salary = salary;
     }
 
@@ -59,4 +58,7 @@ public class Employee {
                 ", salary=" + salary;
     }
 
+    public String getFullName() {
+        return "ФИО " + surname + " " + firstName + " " + patronymic;
+    }
 }
