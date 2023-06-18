@@ -11,8 +11,8 @@ public class Storage {
         employees[5] = new Employee("Иван", "Иванович", "Макаревич", 1, 16000);
         employees[6] = new Employee("Иван", "Иванович", "Кутиков", 2, 26000);
         employees[7] = new Employee("Иван", "Иванович", "Маргулис", 5, 21000);
-        employees[8] = new Employee("Иван", "Иванович", "Подгородецкий", 3, 31000);
-        employees[9] = new Employee("Иван", "Иванович", "Державин", 3, 36000);
+        employees[8] = new Employee("Иван", "Иванович", "Подгородецкий", 4, 31000);
+        employees[9] = new Employee("Иван", "Иванович", "Державин", 4, 36000);
     }
 
     public void printEmployees() {
@@ -48,7 +48,7 @@ public class Storage {
     }
 
     public double calculeteAverageSalary() {
-        double averageSalary = (double) countSalary() / employees.length;
+        double averageSalary = countSalary() / employees.length;
         return averageSalary;
     }
 
@@ -57,5 +57,29 @@ public class Storage {
             System.out.println(employee.getFullName());
         }
     }
+
+    public void increaseSalary(double percentIncrease) {
+        for (Employee employee : employees) {
+            employee.setSalary(employee.getSalary() * (1 + percentIncrease / 100));
+        }
+    }
+
+    public Employee findPoorEmployeeDepartment(int department) {
+        Employee Employee = findRichEmployee();
+        for (Employee employee : employees)
+            if (Employee.getSalary() > employee.getSalary() && employee.getDepartment() == department) {
+                Employee = employee;
+            }
+        return Employee;
+    }
+    public Employee findRichEmployeeDepartment(int department) {
+        Employee Employee = findPoorEmployee();
+        for (Employee employee : employees)
+            if (Employee.getSalary() < employee.getSalary() && employee.getDepartment() == department) {
+                Employee = employee;
+            }
+        return Employee;
+    }
+
 }
 
